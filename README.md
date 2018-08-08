@@ -35,10 +35,9 @@
 - https://www.cnblogs.com/wonyun/p/5524617.html 
 
 ---
-
 #### 关于Http
 ##### (1) Http 历史
-![history](leanote://file/getImage?fileId=5b508ad47a8b8b3798000000)
+![his](./img/his.png)
 ##### (2) Http 基本优化
 - 影响Http 网络请求速度的因素：带宽和延迟
     - 延迟包含：
