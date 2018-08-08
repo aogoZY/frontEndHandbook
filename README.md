@@ -33,7 +33,9 @@
 - 强缓存：直接读缓存
 - 协商缓存：先确定缓存是否有效（304）
 - https://www.cnblogs.com/wonyun/p/5524617.html 
+
 ---
+
 #### 关于Http
 ##### (1) Http 历史
 ![history](leanote://file/getImage?fileId=5b508ad47a8b8b3798000000)
