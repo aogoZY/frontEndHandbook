@@ -73,3 +73,10 @@
 - CommonJs 输出的是一个值的复制，存在输出缓存机制，ES6 输出的是值的引用。
 - CommonJs 是运行时加载，ES6 是编译时输出接口。
 - CommonJs 顶层this 指向当前模块，ES6 顶层this 指向undefined。
+
+> ### apply、call、bind 的区别
+- 三个方法的作用都是改变函数的执行上下文
+- apply 和call 会立即执行，而bind 不会立即执行
+- call()在第一个参数之后的，后续所有参数就是传入该函数的值。apply() 只有两个参数，第一个是对象，第二个是数组，这个数组就是该函数的参数。
+- bind 和call 的参数相同
+- https://www.cnblogs.com/ly0612/p/6821124.html
