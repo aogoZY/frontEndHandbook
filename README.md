@@ -64,6 +64,45 @@
 - Https 消耗大，只能解决安全问题，解决不了性能问题，而且加解密的过程实际上会造成性能问题。于是出现了Http2
 - Http2 支持明文传输、使用新的二进制格式、压缩消息头、多路复用（连接共享，只有一个Tcp 连接，双工通信）、服务端推送
 
+> ### 关于Http Header
+##### (1) Http Header 分为以下四种：
+- 通用Header
+- Request Header
+- Response Header
+- 实体Header
+
+##### (2) 通用Header 包含哪些内容？
+- 缓存管理：Cache Control
+- 连接管理：Connection
+- 日期：Date
+- Pragma：Cache Control 向后兼容
+- Transfer Encoding、Upgrade、Via、Warning
+
+##### (3) Request Header 包含哪些内容？
+- 我是谁：User-Agent、Authorization、Proxy-authorization
+- 我从哪里来：From、Referer
+- 我要到哪里去：Host、Max-forwards
+- 我想要什么：Accept、Charset、Encoding、Language、Expect、TE
+- 我有什么要求：If-Match、If-none-match、If-modified-since、If-range、If-unmodified-since
+
+##### (4) Response header 包含哪些内容？
+- 你是谁：WWW-anthenticate
+- 我是谁：Server
+- 你要的我有没有：Accept-ranges、Etag、
+- 谁那里有：Location
+- 现在暂时没有：Retry-after
+
+##### (5) 实体Header 包含哪些内容？
+- Allow
+- Content Encoding、Content Language、Content Type、Content Length、Content-location、Content-Range
+- Expires、Last Modified
+
+##### (6) Cookie 相关
+- Set Cookie
+- Cookie
+
+##### (7) 其他Header
+- X-Frame-Options、X-XSS-Protection、DNT、P3P
 > ### JavaScript 加载方式
 - 默认为同步加载，即加载会阻断渲染过程，用户体验较差。
 - 使用了defer 属性后，脚本异步加载，同步执行，及在渲染的同时加载，但是在渲染之后才执行，多个脚本可以保证加载顺序。引入脚本时添加type=module 属性相当于默认打开了defer。
