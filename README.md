@@ -165,7 +165,7 @@
 - 回调函数
 - 发布订阅
 
-> ### async ang await
+> ### async & await
 - 是generator 函数的语法糖
 - async 函数的返回值是Promise 对象
 - await 命令后面是一个Promise 对象，如果不是，会被转成一个立即resolve 的Promise 对象
