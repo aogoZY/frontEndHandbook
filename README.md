@@ -170,3 +170,7 @@
 - async 函数的返回值是Promise 对象
 - await 命令后面是一个Promise 对象，如果不是，会被转成一个立即resolve 的Promise 对象
 - async 的实现原理就是将generator 函数和自动执行器包装在一个函数里
+
+> ### NodeJs 全局对象
+- global、__filename、__dirname、setTimeout、clearTimeout、setInterval、console、process
+- http://www.runoob.com/nodejs/nodejs-global-object.html
