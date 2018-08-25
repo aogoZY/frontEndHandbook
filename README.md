@@ -195,3 +195,16 @@
 ##### (4) Ref
 - https://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%E5%8A%A8%E7%94%BB%E7%AE%97%E6%B3%95/
 http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
+
+> ### 关于OPTIONS 请求
+##### (1) 有什么用
+- 获取服务器支持的HTTP请求方法；也是黑客经常使用的方法
+- 用来检查服务器的性能。例如：AJAX进行跨域请求时的预检，需要向另外一个域名的资源发送一个HTTP OPTIONS请求头，用以判断实际发送的请求是否安全。
+##### (2) 跨域产生时机
+- 跨域时的非简单请求会触发OPTIONS 预检，所谓的非简单请求包含以下三个条件
+  - 只能是Get、Head、Post方法
+  - Http 头信息不超出以下几个字段：Accept、Accept-Language、Content-Language、Last-Event-ID
+  - Content-Type只能取这几个值：
+    - application/x-www-form-urlencoded
+    - multipart/form-data
+    - text/plain
