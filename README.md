@@ -177,15 +177,18 @@
 - http://www.runoob.com/nodejs/nodejs-global-object.html
 
 > ### 关于RequestAnnationFrame
+#####（1）为什么
 - 用来实现动画效果，传统的实现动画效果的方式是使用setTimeout 或者setInterval，有以下几个问题：
   - 如何确定正确的时间间隔？（浏览器和硬件性能不同）
   - 毫秒的不精确性
   - 如何避免过度渲染
 - 归根接地，问题的根源在于时机。
-- 实现原理：注册回调函数 -> 浏览器更新时触发animate -> 触发所有注册的callback
-- 能解决什么问题：
-  - 控制绘制频率
-  - 实现css3 不能实现的东西，比如scrolltop，还有一些动画效果
-  - 向下兼容
+#####（2）怎么做
+- 注册回调函数 -> 浏览器更新时触发animate -> 触发所有注册的callback
+#####（3）能解决什么问题：
+- 控制绘制频率
+- 实现css3 不能实现的东西，比如scrolltop，还有一些动画效果
+- 向下兼容
+#####（4）Ref
 - https://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%E5%8A%A8%E7%94%BB%E7%AE%97%E6%B3%95/
 http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
