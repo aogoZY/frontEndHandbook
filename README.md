@@ -208,3 +208,13 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
     - application/x-www-form-urlencoded
     - multipart/form-data
     - text/plain
+
+> ### 常见浏览器内核
+- Trident内核：IE,MaxThon,TT,The Word,360,搜狗浏览器等
+- Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等
+- Presto内核：Opera7及以上
+- Webkit内核：Safari,Chrome等
+
+> ### 浏览器不同标签之间的通信
+- 相同域名可以使用cookie 或者localStorage
+- 不同域名可以使用postMessage
