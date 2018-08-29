@@ -28,6 +28,10 @@
 - https://segmentfault.com/a/1190000010780991#articleHeader41
 
 > ### Css 引入方式link 和@import 的区别
+- link 是html 的标签 ，而@import 是css 的标签，link除了调用css外还可以有其他作用譬如声明页面链接属性，声明目录，rss等
+- link支持使用Javascript控制DOM去改变样式；而@import不支持
+- link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持
+- 当一个页面被加载的时候（就是被浏览者浏览的时候），link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载。
 
 > ### Css hack
 - Css 定义p 标签，字体在IE6 下为黑色，IE7 下为红色，其他为绿色
