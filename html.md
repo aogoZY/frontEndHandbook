@@ -2,8 +2,8 @@
 > ### H5 新特性
 - 关于图像、位置、存储等新的api
 - canvas、audio、vedio
-- 本地存储：localStorage、sessionStorage
-- 语义化元素：header、footer、nav、article
+- 本地存储：localStorage、sessionStorage
+- 语义化元素：header、footer、nav、article
 - 新技术：webworker、 websocket
 - 新增表单控件：calendar,date,time,email,url,search
 - 移除和新增部分标签
