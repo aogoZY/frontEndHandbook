@@ -219,3 +219,4 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 - 相同域名可以使用cookie 或者localStorage
 - 不同域名可以使用postMessage
 - conflict happens
+- Victor Test
