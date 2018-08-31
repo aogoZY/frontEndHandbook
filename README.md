@@ -166,12 +166,6 @@
 - 回调函数
 - 发布订阅
 
-> ### async & await
-- 是generator 函数的语法糖
-- async 函数的返回值是Promise 对象
-- await 命令后面是一个Promise 对象，如果不是，会被转成一个立即resolve 的Promise 对象
-- async 的实现原理就是将generator 函数和自动执行器包装在一个函数里
-
 > ### NodeJs 全局对象
 - global、__filename、__dirname、setTimeout、clearTimeout、setInterval、console、process
 - http://www.runoob.com/nodejs/nodejs-global-object.html
@@ -218,3 +212,18 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 > ### 浏览器不同标签之间的通信
 - 相同域名可以使用cookie 或者localStorage
 - 不同域名可以使用postMessage
+
+
+> ### ES6 相关
+##### (1) Promise
+- 是ES6 中异步编程的一种解决方案，相比于传统的回调可以解决回调地狱的问题，有三种状态：pending、resolved、rejected
+- Promise api 有resolve、reject、all、race、done、finally
+##### (2) Generator
+- 是ES6 中异步编程的一种解决方案
+- 调用该函数会返回一个内部指针（遍历器），执行它不会返回结果，而是返回指针对象，可以通过next 方法移动内部指针
+- 利用该函数可以在任意对象上部署Iterator 接口，之后我们可以通过for of 进行访问
+##### (3) async & await
+- 是generator 函数的语法糖
+- async 函数的返回值是Promise 对象
+- await 命令后面是一个Promise 对象，如果不是，会被转成一个立即resolve 的Promise 对象
+- async 的实现原理就是将generator 函数和自动执行器包装在一个函数里
