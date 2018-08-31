@@ -218,8 +218,3 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 > ### 浏览器不同标签之间的通信
 - 相同域名可以使用cookie 或者localStorage
 - 不同域名可以使用postMessage
-- conflict happens
-- Victor Test
-=======
-- Victor Test1
->>>>>>> 67a4eda1fe2b4e521490764ceda60a8431d99008
