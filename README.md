@@ -114,13 +114,6 @@
 - CommonJs 是运行时加载，ES6 是编译时输出接口。
 - CommonJs 顶层this 指向当前模块，ES6 顶层this 指向undefined。
 
-> ### apply、call、bind 的区别
-- 三个方法的作用都是改变函数的执行上下文
-- apply 和call 会立即执行，而bind 不会立即执行
-- call()在第一个参数之后的，后续所有参数就是传入该函数的值。apply() 只有两个参数，第一个是对象，第二个是数组，这个数组就是该函数的参数。
-- bind 和call 的参数相同
-- https://www.cnblogs.com/ly0612/p/6821124.html
-
 > ### 一句话聊设计模式
 - 简单工厂：就是一个提供不同类原型的统一方法。包括两部分，类和导出类的接口，修改时也要修改两部分。
 - 工厂方法：在工厂类的原型上添加属性，每个属性对应一个类。修改时只需修改一部分。
@@ -216,3 +209,11 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 - async 函数的返回值是Promise 对象
 - await 命令后面是一个Promise 对象，如果不是，会被转成一个立即resolve 的Promise 对象
 - async 的实现原理就是将generator 函数和自动执行器包装在一个函数里
+
+> ### 前端性能优化的方式
+- 代码压缩
+- 减少http 请求：如雪碧图
+- 使用cdn 加速
+- 资源懒加载或预加载
+- 监听节流
+- 合理利用缓存

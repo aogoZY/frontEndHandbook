@@ -56,6 +56,23 @@ p {
     - 其他CSS3属性(flex、opacity、transform 等）
 
 > ### 关于块级格式化上下文（BFC）
+##### (1) BFC 是什么？
+全称是块级格式化上下文，相当于Css 的结界，结界内外互不干扰。
+##### (2) 有什么用？
+- 消除margin 合并
+- 清除浮动
+- 消除多列布局bug
+##### (3) 怎么形成BFC？
+- 根元素
+- float属性不为none
+- position为absolute或fixed
+- display为inline-block, table-cell, table-caption, - flex, inline-flex
+- overflow不为visible
+##### (4) Ref
+- https://mp.weixin.qq.com/s/msPO-fLlg6YqBUgE6xuYQw
+
+##### (5) 问题
+- float 为什么是bfc？
 
 > ### 雪碧图的优缺点
 - 优点：减少http 请求，调高页面加载速度，提升用户体验
@@ -66,3 +83,16 @@ p {
 > ### display: none 和visible: hidden 的区别
 - display: none 不占据物理空间
 - display: none 会影响网站SEO
+
+> ### 浏览器是怎样解析CSS选择器的？
+- 按选择器从右向左遍历dom 数，如果某条路径符合选择器结构则加入结果集
+- 为何要从右向左遍历：一开始可以筛掉尽可能多的无关元素，且需遍历的情况更少
+
+> ### 关于flex 布局
+一维弹性布局规则，还是要动手去写，附阮一峰老师的两篇参考文章
+- http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+- http://www.ruanyifeng.com/blog/2015/07/flex-examples.html
+
+> ### 兼容retina 屏幕相关技术
+- retina 屏幕的设备像素比是正常屏幕的两倍，正常屏幕下一个css 像素对应一个物理像素，但是retina 屏幕下一个css 像素对应两个物理像素，所以如果将正常的图片放在retina 屏幕下显示，一个像素可能要被放大四倍，导致图片发生轻微失真
+- 解决办法是开发时准备正常图片和@2x 图两种图片，通过js 或者image-set 或者@media 查询来选择性地加载不同的图片
