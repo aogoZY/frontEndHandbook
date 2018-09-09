@@ -153,7 +153,7 @@
 
 > ### 实现异步的方式有哪些
 - 事件
-- Primse
+- Promise
 - SetTimeOut
 - Generator 函数
 - 回调函数
@@ -199,7 +199,7 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 > ### ES6 相关
 ##### (1) Promise
 - 是ES6 中异步编程的一种解决方案，相比于传统的回调可以解决回调地狱的问题，有三种状态：pending、resolved、rejected
-- Promise api 有resolve、reject、all、race、done、finally
+- Promise api 有resolve、reject、all、race、done、finally
 ##### (2) Generator
 - 是ES6 中异步编程的一种解决方案
 - 调用该函数会返回一个内部指针（遍历器），执行它不会返回结果，而是返回指针对象，可以通过next 方法移动内部指针
@@ -222,7 +222,7 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 ##### (1) 单页面应用
 - 由一个外壳页面和多个页面片段构成
 - 页面跳转不涉及整个页面的刷新
-- 用户体验好，开发难度高
+- 用户体验好，开发难度高
 - SEO 需要单独做方案
 ##### (2) 如何做SEO
 - SSR
