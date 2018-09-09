@@ -1,7 +1,7 @@
 # Knowledge of js
 > ### 事件代理
 
-> ### JS 模块化
+> ### JS 模块化
 ##### (1) CommonJs
 - 服务器端，同步加载。
 - nodeJs 的模块化机制，使用exports 和require 导出和导入模块。
@@ -12,7 +12,7 @@
 ##### (3) CMD
 - 浏览器端，异步加载。
 - seaJs 为遵循CMD 的模块化工具。
-- AMD 与CMD 的区别在于
+- AMD 与CMD 的区别在于
     - AMD 推崇依赖前置，在定义模块的时候就要声明其依赖的模块
     - CMD推崇就近依赖，只有在用到某个模块的时候再去require 
 ##### (3) ES6
@@ -31,7 +31,7 @@ typeof undefined  // undefined
 
 > ### 内置对象、原生对象、宿主对象
 - 内置对象：是原生对象的一种，包含Global、Math 和JSON 等不需要new 可以直接使用的对象
-- 原生对象：包含Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError。简单来说，本地对象就是 ECMA-262 定义的引用类型，需要使用new 创建。（也就是说原生对象实际上包含引用类型和内置对象两种）
+- 原生对象：包含Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError。简单来说，本地对象就是 ECMA-262 定义的引用类型，需要使用new 创建。（也就是说原生对象实际上包含引用类型和内置对象两种）
 - 宿主对象：不是引擎的原生对象，而是由宿主框架通过某种机制注册到JavaScript 引擎中的对象，比如浏览器的window, document。
 
 > ### apply、call、bind 的区别
@@ -56,3 +56,53 @@ typeof undefined  // undefined
 - 对于value 属性值来说，影响是单向的 attribute -> propery，但是两者的改动都会反映到html 中
 - 对于其他属性来说，影响是双向的
 - 对于新添加的非默认属性来说，互不影响
+
+> ### load 和DOMContentLoaded 的区别
+- load 事件在DOMContentLoaded 之后
+- 解析html 构建dom 树完成之后触发DOMContentLoaded 事件，此时可以访问到dom 元素
+- 图片等所有外部元素加载完后会触发load 时间
+- 兼容性：onload事件所有浏览器都支持，DOMContentLoaded事件高级浏览器均支持。E6、IE7仅支持onreadystatechange，更低级的ie用doscroll事件来检测。
+
+> ### 尾调用优化
+##### (1) 尾调用
+- 某函数的最后一步调用了另一个函数
+```js
+function f(x){
+  return g(x);
+}
+```
+##### (2) 尾调用优化
+- 尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用记录。
+- 尾调用优化的意义就在于每次执行时，调用记录只有一项，这将大大节省内存。
+##### (3) 尾递归
+- 函数尾调用自身
+- 对于普通递归来说，非常消耗内存，要同时保存成百上千个调用记录，很容易导致栈溢出，但是对于进行了尾调用优化的尾递归来说，则永远不会发生栈溢出错误
+```js
+function factorial(n, total) {
+  if (n === 1) return total;
+  return factorial(n - 1, n * total);
+}
+```
+##### (4) 参考
+- http://www.ruanyifeng.com/blog/2015/04/tail-call.html
+
+> ### Event Loop
+- js 中存在执行栈和事件队列
+- js 先去执行执行栈中的方法，执行完后再去查询事件队列中是否有任务，如果有的话则将其拿出放到执行栈中执行，如此循环，被称为事件循环
+- 事件队列中的异步任务又分为宏任务与微任务
+    - 宏任务包含setInterval 和setTimeout
+    - 微任务包含Promise 和MutationObserver
+    - 微任务先于宏任务执行
+    ```js
+    setTimeout(function () {
+      console.log(1);
+    });
+    new Promise(function(resolve,reject){
+      console.log(2)
+      resolve(3)
+    }).then(function(val){
+      console.log(val);
+    })
+    // 2 3 1
+    ```
+
