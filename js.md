@@ -58,8 +58,8 @@ typeof undefined  // undefined
 - 对于新添加的非默认属性来说，互不影响
 
 > ### load 和DOMContentLoaded 的区别
-- load 事件在DOMContentLoaded 之后
-- 解析html 构建dom 树完成之后触发DOMContentLoaded 事件，此时可以访问到dom 元素
+- load 事件在DOMContentLoaded 之后
+- 解析html 构建dom 树完成之后触发DOMContentLoaded 事件，此时可以访问到dom 元素
 - 图片等所有外部元素加载完后会触发load 时间
 - 兼容性：onload事件所有浏览器都支持，DOMContentLoaded事件高级浏览器均支持。E6、IE7仅支持onreadystatechange，更低级的ie用doscroll事件来检测。
 
@@ -87,9 +87,9 @@ function factorial(n, total) {
 - http://www.ruanyifeng.com/blog/2015/04/tail-call.html
 
 > ### Event Loop
-- js 中存在执行栈和事件队列
+- js 中存在执行栈和事件队列
 - js 先去执行执行栈中的方法，执行完后再去查询事件队列中是否有任务，如果有的话则将其拿出放到执行栈中执行，如此循环，被称为事件循环
-- 事件队列中的异步任务又分为宏任务与微任务
+- 事件队列中的异步任务又分为宏任务与微任务
     - 宏任务包含setInterval 和setTimeout
     - 微任务包含Promise 和MutationObserver
     - 微任务先于宏任务执行
