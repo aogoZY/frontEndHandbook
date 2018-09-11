@@ -227,3 +227,8 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 ##### (2) 如何做SEO
 - SSR
 - 预渲染
+
+> ### unicode 和utf-8、utf-16、utf-32 的区别
+- unicode 是字符集，是所有字符与数字的对应关系
+- utf 系列是字符集编码规则，就是如何将字符对应的数字存储在计算机中
+- utf-8、utf-16、utf-32 的不同之处就在于它们默认的基数单位不同，utf-8 的基数单位是一个字节，urf-16 的基数单位是两个字节，utf-32 是四个字节
