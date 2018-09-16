@@ -106,3 +106,17 @@ function factorial(n, total) {
     // 2 3 1
     ```
 
+### js 操作cookie
+##### (1) 设置
+- 通过给document.cookie 直接赋值的方式设置cookie 的值、域名、及过期时间等信息
+```js
+function setCookie(name,value) 
+{ 
+    var Days = 30; 
+    var exp = new Date(); 
+    exp.setTime(exp.getTime() + Days*24*60*60*1000); 
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString(); 
+} 
+```
+##### (2) 读取
+##### (3) 删除
