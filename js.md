@@ -119,4 +119,28 @@ function setCookie(name,value)
 } 
 ```
 ##### (2) 读取
+- 通过使用正则匹配查找你要读取的cookie
+```js
+function getCookie(name) 
+{ 
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+ 
+    if(arr=document.cookie.match(reg))
+ 
+        return unescape(arr[2]); 
+    else 
+        return null; 
+} 
+```
 ##### (3) 删除
+- 通过设置cookie 过期时间的方式删除cookie
+```js
+function delCookie(name) 
+{ 
+    var exp = new Date(); 
+    exp.setTime(exp.getTime() - 1); 
+    var cval=getCookie(name); 
+    if(cval!=null) 
+        document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
+} 
+```
