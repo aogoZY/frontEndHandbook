@@ -1,5 +1,9 @@
 # Knowledge of js
 > ### 事件代理
+- 利用事件的冒泡机制将子元素的事件监听统一由父元素来管理
+- 资源消耗少，代码可维护性和可扩展性好
+- 适用事件代理的事件：click，mousedown，mouseup，keydown，keyup，keypress
+- 不适用事件代理的事件：mousemove，focus，blur（后两者不存在冒泡特性）
 
 > ### JS 模块化
 ##### (1) CommonJs
