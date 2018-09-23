@@ -110,7 +110,7 @@ function factorial(n, total) {
     // 2 3 1
     ```
 
-### js 操作cookie
+> ### js 操作cookie
 ##### (1) 设置
 - 通过给document.cookie 直接赋值的方式设置cookie 的值、域名、及过期时间等信息
 ```js
@@ -148,3 +148,35 @@ function delCookie(name)
         document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
 } 
 ```
+
+> ### ajax 异步提交表单的两种方式
+##### (1) 将form表单数据序列化
+```js
+// 使用这种方法的前提是form表单中的项一定要有name属性
+$.ajax({  
+    type: 'POST',  
+    url: 'url',  
+    data: $('#yourformid').serialize(),  
+    async: false,  
+    error: function(request) {  
+        alert('Error');  
+    },  
+    success: function(data) {  
+        // ...  
+    }  
+});
+```
+##### (2) 通过窗口查找form提交
+```js
+// form表单都必须要有name属性，没有试过这种方法
+var obj = document.getElementById("xx_iframe").contentWindow;  
+  obj.$("#yourform").form("submit",{  
+    success :function(data){  
+        //对结果处理  
+    }    
+  });
+```
+
+> ### 万恶的正则表达式
+- 基本语法：https://www.cnblogs.com/moqiutao/p/6513628.html
+- 正则校验身份证：https://www.jb51.net/article/136639.htm
