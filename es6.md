@@ -1,6 +1,39 @@
 # Something about ES6.
 
 
+> ### Proxy
+##### (1) 是什么？
+- Proxy 用于修改某些操作的默认行为，相当于对编程语言进行编程，他通过重写或指定某些方法来改变js 的默认行为。
+##### (2) 拦截方法
+- get() 方法用来拦截属性的读取操作
+- set() 方法用来拦截属性的设置操作
+- apply() 方法用来拦截函数的调用、call 和apply 操作
+- has() 方法用来拦截HasProperty 操作
+- construct() 方法用于拦截new 命令
+- deleteProperty() 用于拦截delete 操作
+- getOwnPropertyDescriptor() 用于拦截获取属性描述符对象
+- getPrototypeOf() 用于拦截获取对象原型
+- isExtensible() 拦截Object.isExtensible 操作
+- ownKeys() 用于拦截对象自身属性的读取操作
+- preventExtensions() 用于拦截Object.preventExtensions() 操作
+- setProtorypeOf() 用于拦截Object.setPrototypeOf 方法
+##### (3) 可取消实例
+- Proxy.revocable 方法返回一个可取消的Proxy 实例
+```js
+let target = {};
+let handler = {};
+
+let {proxy, revoke} = Proxy.revocable(target, handler);
+
+proxy.foo = 123;
+proxy.foo // 123
+
+revoke();
+proxy.foo // TypeError: Revoked
+```
+##### (4) 参考资料
+- http://es6.ruanyifeng.com/#docs/proxy
+
 > ### Promise
 - 是ES6 中异步编程的一种解决方案，相比于传统的回调可以解决回调地狱的问题
 - Promise 是一个对象，可以获取异步操作的消息，有三种状态：pending、fulfilled、rejected，变成fulfilled 或者rejected 的状态都称为resolved
