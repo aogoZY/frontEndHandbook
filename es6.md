@@ -1,6 +1,19 @@
 # Something about ES6.
 
 
+> ### Map & WeakMap
+##### (1) Map
+- Map 的键不限于字符串
+- 任何具有Iterator 接口，且每个成员都是双元素数组的数据结构都可以当做Map 构造函数的参数
+- Map api 包含set、get、has、delete、clear
+- Map 遍历api 包含keys、values、entries、forEach
+##### (2) WeakMap
+WeakMap 与Map 有以下区别：
+- WeakMap 只接受对象作为键名（null 除外）
+- WeakMap 的键名所指向的对象不计入引用计数
+- WeakMap 没有遍历操作，无法清空
+- 应用场景：注册监听事件、部署私有属性
+
 > ### Symbol
 ##### (1) 是什么？
 - Symbol 是ES6 中引入的一种新的原始数据类型，是JS 语言的第7 种数据类型
