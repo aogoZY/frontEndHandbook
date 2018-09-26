@@ -1,6 +1,54 @@
 # Something about ES6.
 
 
+> ### Symbol
+##### (1) 是什么？
+- Symbol 是ES6 中引入的一种新的原始数据类型，是JS 语言的第7 种数据类型
+- Symbol 与字符串类似，但是其表示独一无二的值
+```js
+let a = Symbol('foo');
+let b = Symbol('foo');
+console.log(a === b); // false
+```
+##### (2) 有什么用？
+- 消除魔术字符串
+```js
+function getArea(shape, options) {
+    var area = 0;
+    switch(shape) {
+        case: 'Triangle' :
+            // ...
+            break;
+    }
+    return area
+}
+getArea('Triangle', {});
+
+// 使用Symbol 修改后如下
+const shapeType = {
+    triangle: Symbol()
+}
+// 然后使用shapeType.triangle 替换上面的'Triangle'
+
+```
+- 实现非私有但只希望内部访问的属性
+##### (3) 重新使用一个Symbol 值
+- 使用Symbol.for, 声明的变量会被登记在全局环境中供搜索
+```js
+let a = Symbol.for('foo');
+let b = Symbol.for('foo');
+console.log(a === b); // true
+```
+- 使用Symbol.keyFor 可以返回一个已登记的Symbol 类型值的key
+```js
+let s = Symbol.for('foo');
+Symbol.keyFor(s); // 'foo'
+```
+##### (4) 内置Symbol 值
+- Symbol.hasInstance、isConcatSpreadable、species、match、replace、search、split、iterator、toPrimitive、toStringTag、unscopables
+##### (5) 参考资料
+- http://es6.ruanyifeng.com/#docs/symbol
+
 > ### Proxy
 ##### (1) 是什么？
 - Proxy 用于修改某些操作的默认行为，相当于对编程语言进行编程，他通过重写或指定某些方法来改变js 的默认行为。
