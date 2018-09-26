@@ -1,5 +1,16 @@
 # Something about ES6.
 
+> ### Set & WeakSet
+##### (1) Set
+- Set 类似数组，但是成员的值是唯一的，没有重复
+- Set 内部判断两个值是否相等用的方法类似精确相等运算符（===），主要区别是这里NaN 等于NaN
+- Set api 包含add、delete、has、clear
+- Set 遍历api 包含keys、values、entries、forEach
+##### (2) WeakSet
+WeakSet 与Set 有以下区别：
+- WeakSet 的成员只能是对象，而不能是其他值
+- WeakSet 的对象都是弱引用，及引用计数不考虑WeakSet 的引用
+- WeakSet 有多少成员取决于内存回收机制有没有运行，所以其不可遍历
 
 > ### Map & WeakMap
 ##### (1) Map
