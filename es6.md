@@ -1,6 +1,11 @@
 # Something about ES6.
 
 
+> ### Promise
+- 是ES6 中异步编程的一种解决方案，相比于传统的回调可以解决回调地狱的问题
+- Promise 是一个对象，可以获取异步操作的消息，有三种状态：pending、fulfilled、rejected，变成fulfilled 或者rejected 的状态都称为resolved
+- Promise api 有then、catch、resolve、reject、all、race
+
 > ### Iterator
 ##### (1) 是什么？
 - 是一种遍历器接口，部署了Iterator 接口的数据结构可以使用ES6 的for...of 进行遍历
