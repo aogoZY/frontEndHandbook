@@ -230,4 +230,4 @@ http://taobaofed.org/blog/2017/03/02/thinking-in-request-animation-frame/
 ##### (3) 如何优化
 - 多次样式属性操作合并为一次
 - 需要频繁重排的元素设置为绝对定位，例如有动画效果的元素
-- 如果要对一个元素进行复杂操作，可以先用display: none 进行隐藏，操作完成后再进行显示
+- 如果要对一个元素进行复杂操作，可以先用display: none 进行隐藏，操作完成后再进行显示
