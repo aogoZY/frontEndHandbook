@@ -69,7 +69,7 @@ let s = Symbol.for('foo');
 Symbol.keyFor(s); // 'foo'
 ```
 ##### (4) 内置Symbol 值
-- Symbol.hasInstance、isConcatSpreadable、species、match、replace、search、split、iterator、toPrimitive、toStringTag、unscopables
+- Symbol.hasInstance、isConcatSpreadable、species、match、replace、search、split、iterator、toPrimitive、toStringTag、unscopables
 ##### (5) 参考资料
 - http://es6.ruanyifeng.com/#docs/symbol
 
