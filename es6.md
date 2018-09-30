@@ -90,7 +90,7 @@ Symbol.keyFor(s); // 'foo'
 - preventExtensions() 用于拦截Object.preventExtensions() 操作
 - setProtorypeOf() 用于拦截Object.setPrototypeOf 方法
 ##### (3) 可取消实例
-- Proxy.revocable 方法返回一个可取消的Proxy 实例
+- Proxy.revocable 方法返回一个可取消的Proxy 实例
 ```js
 let target = {};
 let handler = {};
