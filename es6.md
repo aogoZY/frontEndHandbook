@@ -85,7 +85,7 @@ Symbol.keyFor(s); // 'foo'
 - deleteProperty() 用于拦截delete 操作
 - getOwnPropertyDescriptor() 用于拦截获取属性描述符对象
 - getPrototypeOf() 用于拦截获取对象原型
-- isExtensible() 拦截Object.isExtensible 操作
+- isExtensible() 拦截Object.isExtensible 操作
 - ownKeys() 用于拦截对象自身属性的读取操作
 - preventExtensions() 用于拦截Object.preventExtensions() 操作
 - setProtorypeOf() 用于拦截Object.setPrototypeOf 方法
