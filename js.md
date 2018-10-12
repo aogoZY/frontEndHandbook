@@ -128,12 +128,12 @@ function setCookie(name,value)
 function getCookie(name) 
 { 
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
- 
-    if(arr=document.cookie.match(reg))
- 
+    if(arr=document.cookie.match(reg)) {
         return unescape(arr[2]); 
-    else 
+    }
+    else {
         return null; 
+    }
 } 
 ```
 ##### (3) 删除
@@ -143,9 +143,10 @@ function delCookie(name)
 { 
     var exp = new Date(); 
     exp.setTime(exp.getTime() - 1); 
-    var cval=getCookie(name); 
-    if(cval!=null) 
-        document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
+    var cval = getCookie(name); 
+    if(cval != null) {
+        document.cookie = name + "="+cval+";expires="+exp.toGMTString(); 
+    }
 } 
 ```
 

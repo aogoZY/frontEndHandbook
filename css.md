@@ -37,9 +37,9 @@
 - Css 定义p 标签，字体在IE6 下为黑色，IE7 下为红色，其他为绿色
 ```css
 p {
-    color:green;
-    *color:blue;
-    _color:black;
+    color: green;
+    *color: red;
+    _color: black;
 }
 ```
 
