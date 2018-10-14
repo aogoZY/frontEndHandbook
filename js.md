@@ -181,3 +181,10 @@ var obj = document.getElementById("xx_iframe").contentWindow;
 > ### 万恶的正则表达式
 - 基本语法：https://www.cnblogs.com/moqiutao/p/6513628.html
 - 正则校验身份证：https://www.jb51.net/article/136639.htm
+
+> ### 如何判断一个对象是数组
+- typeof
+- instanceof 不可靠
+- arr.constructor === Array 不可靠
+- Object.prototype.toString
+- ES5 中的Array.isArray
