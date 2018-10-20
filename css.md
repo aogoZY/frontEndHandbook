@@ -2,6 +2,7 @@
 
 
 
+
 > ### 天生inline-block 元素
 - \<input>、\<img>、\<button>、\<textarea>、\<label>
 > ### 常见的行内及块级元素
