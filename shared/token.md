@@ -26,32 +26,6 @@ OAuth 的本意是一个应用允许另一个应用在用户授权的情况下�
 ## 那么多概念，用什么故事可以把他们串联在一起？
 在日常开发过程中，我们为什么会同时接触到session 和token？按理来说，session 和token 是用于认证授权的两种方式？
 
-#### CAS
-
-CAS （Central Authentication Service）中央认证服务，是一款不错的Web 应用的单点登录框架，包含CAS Server、CAS Client 和Web Browser 三个概念。CAS的核心就是Ticket，中文称之为票据。
-
-#### TGC
-
-1、是什么
-
-Ticket-granting cookie(TGC) ：存放用户身份认证凭证的 cookie ，在浏览器和 CAS Server 间通讯时使用，并且只能基于安全通道传输（ Https ），是 CAS Server 用来明确用户身份的凭证；
-
-2、为什么需要？
-
-同一公司中的AB两个子服务都依赖C做单点登录，用户在A登录以后，如果跳转到B进行访问，不需要再次登录，这个过程就是由TGC保障的，用户浏览器带着TGC到C（C根据这个TGC找到一个TGT，存放的是用户的信息），C判断这是一个已登录用户，告诉B可以直接访问资源。
-
-3、TGC过期规则是如何设置的？
-
-可以在cas.properties中进行配置，默认八小时，无操作，默认两小时。
-
-#### ST
-
-ST票据过期配置，默认时间是10秒钟。所以需要用ST换取token？然后用session 管理token，可以维持一个小时不过期
-
-Ref：
-
-https://blog.csdn.net/yushenzaishi/article/details/80435343
-
 ## Ref
 - 不要用JWT替代session管理（上）：全面了解Token,JWT,OAuth,SAML,SSO：https://juejin.im/post/5b3b870a5188251ac85826b8
 - 傻傻分不清之 Cookie、Session、Token、JWT：https://juejin.im/post/5e055d9ef265da33997a42cc#heading-22
