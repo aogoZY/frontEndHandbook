@@ -28,12 +28,24 @@
 - 常用的Plugin 包含commons-chunk-plugin、uglifyjs-webpack-plugin、happypack-plugin 等
 - stylelint 可以用于检查css 风格，但是我们一直都没有用到
 - common chunk 的规则是可以定义的，比如说必须被几个以上的文件引用，或者说位于node_modules 下，或者是特定的包（比如react）
+- HashModuleIdsPlugin 可以使生成的hash 值更稳定
+- Happy pack 可以用于多线程打包
 
 ### Sth I didn't know
 - npm i --production 就不会安装devDependencies
 - webpack-dev-server 将打包结果放在内存中
 - 热更新有一个更洋气的名字：live-reloading
+- map文件会很大，但是不打开f12，浏览器不会加载这些文件，因此对于普通用户来说并无影响
+- 可以通过设置hidden-suorce-map 取消bundle 文件中对map 文件的引用
+- 有个叫Import cost 的VS Code 插件可以实时显示引入模块的大小，及gzip 后的大小
+- 增加构建速度的两种方法：增加资源（Happy pack）和缩小范围（tree shaking）
+- 添加noParse 可以使该模块不被任何loader 解析，但是依然会被打包；IngorePlugin 则不会打包指定模块
+- 动态链接库（dll plugin）和code spliting 的区别在于，前者是单独配置，独立打包，理论上来说打包速度更快
+- tree shaking 只针对ES6 Module，CommonJs 不好使
+- 其他工具：webpack-dashboard、webpack-merge、size-plugin
+- HMR 部分刷新页面需要浏览器和WDS（webpack-dev-server）通信
+- rollup 可以做到零配置，打包干净，但是只针对js 文件
 
 
-### Stop at 6.2.3 设置提取规则
+### Stop at 10.2.1 打包速度
  
