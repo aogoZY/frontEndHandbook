@@ -45,7 +45,3 @@
 - 其他工具：webpack-dashboard、webpack-merge、size-plugin
 - HMR 部分刷新页面需要浏览器和WDS（webpack-dev-server）通信
 - rollup 可以做到零配置，打包干净，但是只针对js 文件；parcel 打包速度快更快，因为不需要多次转换为AST
-
-
-### Stop at 10.2.1 打包速度
- 
